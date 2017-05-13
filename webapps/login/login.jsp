@@ -42,9 +42,9 @@ String pass = "pass";//column in database
     <%
   }%> </table>
     <div class="login">
-      <form name="form1">
-      <input type = "text" name="query" placeholder="請輸入要查詢的帳號" value="">
-      <input type="button" value="查詢" class="btn btn-primary btn-block btn-large" onclick="query()" />
+      <form name="form1" action="query.jsp">
+      <input type = "text" name="query" placeholder="請輸入要查詢的帳號" value="" >
+      <input type="submit" value="查詢" class="btn btn-primary btn-block btn-large"  />
 <form>
 </div>
 
@@ -55,26 +55,6 @@ String pass = "pass";//column in database
   <%  } else {
         %><div><center><%out.println("Invalid username or password <a href='index.jsp'>try again</a>");%></center></div><%
     }%>
-<script>
-function query(){
- var query1 = document.form1.query.value;
-  <%
-  String idquery = request.getParameter("query1");
-  String sqll = "select * from homework where uname='"+idquery+"'";
-  rs = st.executeQuery(sqll);
-  if(rs.next()){
-    String query_id = rs.getString(uname);
-    String query_pass = rs.getString(pass);
-    %>
-    <%
-    out.println("username = "+ query_id + "pass = "+ query_pass);%>
-    <%
-
-  }else{
-    out.println("查無此資料");
-  }%>
-}
-</script>
 <%
 
     st.close();

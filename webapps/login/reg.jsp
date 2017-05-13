@@ -99,6 +99,7 @@ td, th, a {
                         <td>Password</td>
                         <td><input type="password" name="pass" value="" required/></td>
                     </tr>
+                        
                     <tr>
                         <td><input type="submit" value="Submit" class="btn btn-primary btn-block btn-large" /></td>
                         <td><input type="reset" value="Reset"  class="btn btn-primary btn-block btn-large"/></td>
